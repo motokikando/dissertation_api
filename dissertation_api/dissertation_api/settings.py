@@ -84,9 +84,12 @@ WSGI_APPLICATION = 'dissertation_api.wsgi.application'
 
 #Django REST frameworkの設定
 REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
         #Simple JWTの読み込み 認証を通った場合にJWTを許可
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
 }
 

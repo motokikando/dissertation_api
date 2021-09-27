@@ -10,7 +10,7 @@ from django.db.models.fields import json
 def upload_avatar_path(instance, filename):
     #拡張子を定義
     ext = filename.split('.')[-1]
-    return '/'.json(['avatars', str(instance.user_profile.id)+str('.')+str(ext)])
+    return '/'.join(['avatars', str(instance.user_profile.id)+str('.')+str(ext)])
 
 
 class Profile(models.Model):
@@ -18,10 +18,11 @@ class Profile(models.Model):
         User, related_name='user_profile',
     on_delete=models.CASCADE
     )
+    img = models.ImageField(blank=True, null=True, upload_to=upload_avatar_path)
 
-    #作られたinstanceに対してdefaultでuser_nameの情報を返す
+    #作られたinstanceに対してdefaultでusernameの情報を返す
     def __str__(self):
-        return self.user_profile.user_name
+        return self.user_profile.username
 
 
 
