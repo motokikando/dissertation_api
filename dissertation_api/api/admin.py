@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Category, Thesis, Profile
 
-# Register your models here.
+admin.site.register(Category)
+admin.site.register(Thesis)
+admin.site.register(Profile)
