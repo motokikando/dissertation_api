@@ -4,7 +4,7 @@ from .views import CreateUserView, ListUserView, LoginUserView, ProfileViewSet, 
 
 router = routers.DefaultRouter()
 router.register('category', CategoryViewSet)
-router.register('thesis', ThesisViewSet)
+router.register('theses', ThesisViewSet)
 router.register('profile', ProfileViewSet)
 
 

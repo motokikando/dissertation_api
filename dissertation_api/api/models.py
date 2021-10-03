@@ -38,11 +38,11 @@ class Category(models.Model):
 class Thesis(models.Model):
 
     EVALUATION = (
-        ('1', '⭐️⭐️⭐️⭐️⭐️'),
-        ('2', '⭐️⭐️⭐️⭐️'),
-        ('3', '⭐️⭐️⭐️'),
-        ('4', '⭐️⭐️'),
-        ('5', '⭐️'),
+        (1, '⭐️⭐️⭐️⭐️⭐️'),
+        (2, '⭐️⭐️⭐️⭐️'),
+        (3, '⭐️⭐️⭐️'),
+        (4, '⭐️⭐️'),
+        (5, '⭐️'),
     )
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     title = models.CharField(max_length=255, blank=True, null=True)
