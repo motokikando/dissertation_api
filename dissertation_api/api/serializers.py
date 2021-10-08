@@ -39,4 +39,4 @@ class ThesisSerializer(serializers.ModelSerializer):
         model = Thesis
         fields = ['id', 'title', 'authors', 'year', 'evaluation', 'evaluation_score', 'url', 'introducer', 'introducer_username', 'citaiton', 'summary', 'comment', 'category', 'category_item', 'created_at', 'updated_at']
 
-        extra_kwargs = {'intoroducer':{'read_only': True}}
+        extra_kwargs = {'introducer':{'read_only': True}}
